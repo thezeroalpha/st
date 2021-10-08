@@ -7,7 +7,8 @@
  */
 static char *font = "MesloLGS NF:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = {
-  "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true"
+  "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true",
+  "Unifont:pixelsize=14:antialias=true:autohint=true"
 };
 static int borderpx = 2;
 
