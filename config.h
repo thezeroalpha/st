@@ -225,7 +225,12 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
+
+static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
+static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL };
+static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -243,6 +248,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY|ShiftMask,     XK_Up,          kscrollup,      {.i = -1} },
 	{ MODKEY|ShiftMask,     XK_Down,        kscrolldown,    {.i = -1} },
+  	{ ALTKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
+	{ ALTKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
+	{ ALTKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
 };
 
 /*
